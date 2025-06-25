@@ -22,7 +22,7 @@ cmd({
 async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isCreator, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
     try {
         if (!isCreator) return reply("❌ Owner only command");
-        if (!q) return reply(`Usage:\n${command} https://whatsapp.com/channel/1234567890 hello`);
+        if (!q) return reply(`Usage:\n${command} https://whatsapp.com/channel/0029Vb6AZrY2f3EMgD8kRQ01 hello`);
 
         const [link, ...textParts] = q.split(' ');
         if (!link.includes("whatsapp.com/channel/")) return reply("Invalid channel link format");
@@ -45,12 +45,12 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
         const channelMeta = await conn.newsletterMetadata("invite", channelId);
         await conn.newsletterReactMessage(channelMeta.id, messageId, emoji);
 
-        return reply(`╭━━━〔 *CRISS-AI* 〕━━━┈⊷
+        return reply(`╭━━━〔 *HorlaCRISS-AI* 〕━━━┈⊷
 ┃▸ *Success!* Reaction sent
 ┃▸ *Channel:* ${channelMeta.name}
 ┃▸ *Reaction:* ${emoji}
 ╰────────────────┈⊷
-> *© Pᴏᴡᴇʀᴇᴅ Bʏ ᴄʀɪss-Aɪ ♡*`);
+> *© Pᴏᴡᴇʀᴇᴅ Bʏ horlapookie ♡*`);
     } catch (e) {
         console.error(e);
         reply(`❎ Error: ${e.message || "Failed to send reaction"}`);
